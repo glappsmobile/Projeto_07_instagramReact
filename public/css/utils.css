@@ -1,0 +1,251 @@
+/******************** START UTILS ********************/
+/******************** START VARS ********************/
+:root {
+    --margin-b: 26px; /** MARGIN BIG **/
+    --margin-m: 15px; /** MARGIN MEDIUM **/
+    --margin-s: 11px; /** MARGIN SMALL **/
+    --margin-ss: 9px; /** MARGIN SMALL SMALL **/
+}
+/******************** END VARS ********************/
+
+/******************** START DEBUG ********************/
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.relative {
+    position: relative;
+}
+
+/******************** END DEBUG ********************/
+
+/******************** START SIZES ********************/
+.h-100 {
+    height: 100%;
+}
+
+.h-auto {
+    height: auto;
+}
+
+/******************** END SIZES ********************/
+
+/******************** START ELEVATION ********************/
+
+.z1 {
+    z-index: 1;
+}
+
+/******************** END ELEVATION ********************/
+
+/******************** START BORDER ********************/
+
+.border-none-b {
+    border-bottom: none;
+}
+
+/******************** END BORDER ********************/
+
+/******************** START DISPLAY ********************/
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.content-center {
+    justify-content: center;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+    background: red;
+    left: 0;
+    top: 0;
+}
+/******************** END DISPLAY ********************/
+
+/******************** START MARGIN ********************/
+.margin-none {
+    margin: 0px !important;
+}
+
+.margin-none-b {
+    margin-bottom: 0px !important;
+}
+
+.padding-none {
+    padding: 0px !important;
+}
+
+.container-margin-m-r > * {
+    margin-right: var(--margin-m);
+}
+
+.container-margin-m-r > *:last-child {
+    margin-right: 0px;
+}
+
+.container-margin-s-r > * {
+    margin-right: var(--margin-s);
+}
+
+.container-margin-s-r > *:last-child {
+    margin-right: 0px;
+}
+
+/** LINE **/
+.margin-line-t {
+    margin-top: 2px;
+}
+
+.margin2line-t {
+    margin-top: 4px;
+}
+
+/** BIG **/
+
+.margin-b-t{
+    margin-top: var(--margin-b);
+ }
+
+
+/** MEDIUM **/
+.margin-m-l {
+    margin-left: var(--margin-m);
+}
+
+.margin-m-r {
+    margin-right: var(--margin-m);
+}
+
+.margin-m-h {
+    margin-left: var(--margin-m);
+    margin-right: var(--margin-m);
+}
+
+.margin-m-t{
+    margin-top: var(--margin-m);
+ }
+
+ .margin-m-b{
+    margin-bottom: var(--margin-m);
+}
+
+.margin-m-v{
+    margin-top: var(--margin-m);
+    margin-bottom: var(--margin-m);
+}
+
+.margin-m{
+    margin: var(--margin-m) var(--margin-m) var(--margin-m) var(--margin-m);
+}
+
+/** SMALL **/
+
+.margin-s-l {
+    margin-left: var(--margin-s);
+}
+
+.margin-s-r {
+    margin-right: var(--margin-s);
+}
+
+.margin-s-h {
+    margin-left: var(--margin-s);
+    margin-right: var(--margin-s);
+}
+
+.margin-s-t{
+    margin-top: var(--margin-s);
+ }
+
+ .margin-s-b{
+    margin-bottom: var(--margin-s);
+}
+
+.margin-s-v{
+    margin-top: var(--margin-s);
+    margin-bottom: var(--margin-s);
+}
+
+.margin-s{
+    margin: var(--margin-s) var(--margin-s) var(--margin-s) var(--margin-s);
+}
+
+/** SMALL SMALL **/
+.margin-ss-l {
+    margin-left: var(--margin-ss);
+}
+
+.margin-ss-t {
+    margin-top: var(--margin-ss);
+}
+
+.margin-ss-b {
+    margin-bottom: var(--margin-ss);
+}
+
+
+
+
+/******************** END MARGIN ********************/
+
+/******************** START PADDING ********************/
+
+.padding-m-l {
+    padding-left: var(--margin-m);
+}
+
+.padding-m-r {
+    padding-right: var(--margin-m);
+}
+
+.padding-m-h {
+    padding-left: var(--margin-m);
+    padding-right: var(--margin-m);
+}
+
+.padding-m-t {
+    padding-top: var(--margin-m);
+}
+
+.padding-m-b {
+    padding-bottom: var(--margin-m);
+}
+
+.padding-m-v {
+    padding-top: var(--margin-m);
+    padding-bottom: var(--margin-m);
+}
+
+.padding-m {
+    padding: var(--margin-m) var(--margin-m) var(--margin-m) var(--margin-m);
+}
+/******************** END PADDING ********************/
+
+
+/******************** END UTILS ********************/
