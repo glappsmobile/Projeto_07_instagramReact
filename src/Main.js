@@ -4,7 +4,7 @@ const Main = () => {
     return (
         <div class="content">
             <div class="container-main wmo100">
-                <Posts />
+                <Posts name="modestmouse" />
             </div>
         </div>
     )

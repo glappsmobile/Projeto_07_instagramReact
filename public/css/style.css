@@ -240,7 +240,12 @@ en:hover {
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
+}
 
+.container-post > span {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .container-post-top {
@@ -267,7 +272,6 @@ en:hover {
 .container-post-comments {
     display: flex;
     flex-direction: column;    
-    margin-bottom: 10px;
     font-size: 14px;
     line-height: 1rem;
 }
@@ -369,6 +373,13 @@ en:hover {
     margin-top: 31px;
 }
 
+span.date {
+    color: #8E8E8E;
+    font-size: 10px;
+    margin-top: 9px; 
+    margin-bottom: 10px;
+    width: 100%;
+}
 
 en {
     font-weight: 600;
