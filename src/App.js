@@ -1,13 +1,13 @@
-import Header from './Header';
-import Main from './Main';
+import Header from './components/Header';
+import Main from './components/Main';
 
 const App = () => {
     return (
-        <div>
-            <Header />
-            <Main />
-        </div>
-    )
+      <div>
+        <Header />
+        <Main />
+      </div>
+    );
 }
 
 export default App;

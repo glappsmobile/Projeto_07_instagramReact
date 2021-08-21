@@ -1,36 +1,66 @@
+import numberWithDots from '../utils';
+import IonIcon from './IonIcon';
 
 const PostHeader = (props) => {
     return (
-        <div class="container-post-top">
-            <div class="row flex-items-center">
-                <img className="img-small" src={`images/profile/${props.name}.png`} alt={`Miniatura de ${props.name}`}/>
-                <span class="txt-black bold margin-m-l">{props.name}</span>
+        <div class="post-header">
+            <div class="user-info">
+                <img 
+                    className="img-small" 
+                    src={`images/profile/${props.name}.png`} 
+                    alt={`Miniatura de ${props.name}`}
+                />
+                <strong>{props.name}</strong>
             </div>
-            <ion-icon name="ellipsis-horizontal"></ion-icon>
+            <IonIcon name="ellipsis-horizontal" title="Opções" />
         </div>
     )
 }
 
 const PostButtons = () => {
     return (
-        <div class="container-post-buttons">
+        <div class="post-buttons">
             <div class="container-margin-s-r">
-                <ion-icon name="heart-outline"></ion-icon>
-                <ion-icon name="chatbubble-outline"></ion-icon>
-                <ion-icon name="paper-plane-outline"></ion-icon>
+                <IonIcon name="heart-outline" title="Curtir" />
+                <IonIcon name="chatbubble-outline" title="Comentar" />
+                <IonIcon name="paper-plane-outline" title="Compartilhar" />
             </div>
-            <div>
-                <ion-icon name="bookmark-outline"></ion-icon>
-            </div>
+            <IonIcon name="bookmark-outline" title="Favoritar" />
         </div>
     )
 }
 
 const PostStatus = (props) => {
     return (
-        <div class="container-post-status">
-            <img class="img-profile-mini" src={`images/profile/${props.mainLike}.png`} alt={`Miniatura de ${props.mainLike}`}/>
-            <p> Curtido por <en>{props.mainLike}</en> e <en>outras {props.likeCount} pessoas</en></p>
+        <div class="post-status">
+            <img 
+                class="img-profile-mini" 
+                src={`images/profile/${props.mainLike}.png`} 
+                alt={`Miniatura de ${props.mainLike}`}
+            />
+            <p> 
+                Curtido por <strong>{props.mainLike} </strong>e<strong> outras {props.likeCount} pessoas </strong> 
+            </p>
+        </div>
+    )
+}
+
+const Comment = (props) => {
+    return (
+        <div class="comment">
+            <p> <strong>{props.name}</strong> {props.text} </p>
+            <IonIcon name="heart-outline" title="Curtir" />
+        </div>
+    )
+}
+
+const Comments = (props) => {
+    const commentList = props.comments.map(comment => <Comment name={comment.name} text={comment.text} />);
+    return (
+        <div class="container-post-comments">
+            {(props.authorComment) && <p> <strong>{props.author}</strong> {props.authorComment} </p>}
+            <span class="txt-gray"> Ver todos os {numberWithDots(props.commentCount)} comentários </span>
+            <ul class="comments">{commentList}</ul>
         </div>
     )
 }
@@ -40,43 +70,20 @@ const PostInput = () => {
         <div class="container-push-comment">
             <img src="images/icons/emoji.png" alt=""/>
             <input class="input-comment" placeholder="Adicione um comentário..."/>
-            <span class="btn-publish">Publicar</span>
+            <span class="btn-publish fake-anchor">Publicar</span>
         </div>
     )
 }
 
-const Comment = (props) => {
-    return (
-        <div class="flex space-between">
-            <p> <span class="txt-black bold">{props.name}</span> {props.text}</p> 
-            <img src="images/icons/heart-outline.png" class="icon-micro" alt=""/>
-        </div>
-    )
-}
-
-const Comments = (props) => {
-    const commentList = props.comments.map(comment => <Comment name={comment.name} text={comment.text} />);
-
-    return (
-      <div class="container-post-comments">
-        <p> <span class="txt-black bold">{props.author}</span> {props.authorComment}</p>
-        <span class="txt-gray"> Ver todos os {props.commentCount} comentários</span>
-        {commentList}
-    </div>
-    
-    )
-}
-
-const Post = (props) => {
-    
+const Post = (props) => { 
     return (
         <li class="container-post border-main">
             <PostHeader name={props.post.name} />
             <img class="img-post" src={`images/posts/${props.post.postPic}`} alt={`Post de ${props.post.name}`}/>
             <PostButtons />
-            <PostStatus likeCount={props.post.likeCount} mainLike={props.post.mainLike} />
-            <Comments comments={props.post.comments} author={props.post.name} authorComment={props.post.authorComment} commentCount={props.post.commentCount}/>
-            <span class="date"> {props.post.date} </span>
+            <PostStatus likeCount={numberWithDots(props.post.likeCount)} mainLike={props.post.mainLike} />
+            <Comments comments={props.post.comments} author={props.post.name} authorComment={props.post.authorComment} commentCount={numberWithDots(props.post.commentCount)}/>
+            <span class="date fake-anchor"> {props.post.date} </span>
             <PostInput />
         </li>
     )
@@ -137,13 +144,9 @@ const Posts = () => {
         },
     ]
 
-    const postsList = posts.map((post) =>
-        <Post post={post} />
-    )
-
     return (
         <ul class="container-posts">
-            {postsList}
+            {posts.map((post) =><Post post={post} />)}
         </ul>
     )
 }
