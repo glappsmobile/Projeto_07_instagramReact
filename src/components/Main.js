@@ -1,7 +1,7 @@
 import MediaQuery from 'react-responsive'
-import Posts from './Posts';
+import Posts from './Post/List';
 import Stories from './Stories';
-import SideBar from './SideBar';
+import SideBar from './SideBar/';
 
 const Main = () => {
     const user = {id: 'driven', name: 'Driven'};

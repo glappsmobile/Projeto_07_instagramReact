@@ -1,9 +1,10 @@
-import Post from './Post';
+import Post from '.';
 
 const Posts = () => {
     const posts = [{
         name: "modestmouse",
-        postPic: "skate.jpg",
+        type: "image",
+        content: "skate.jpg",
         mainLike: "electricpants",
         date: "4 DE JULHO",
         likeCount: 250523,
@@ -16,7 +17,8 @@ const Posts = () => {
     },
     {
         name: "spacetoday1",
-        postPic: "lua.jpg",
+        type: "image",
+        content: "lua.jpg",
         mainLike: "respondeai",
         date: "3 DE MAIO",
         likeCount: 11235,
@@ -29,7 +31,8 @@ const Posts = () => {
     },
     {
         name: "respondeai",
-        postPic: "planta.jpg",
+        type: "image",
+        content: "planta.jpg",
         mainLike: "theavettbrothers",
         date: "1 DIA ATRÁS",
         likeCount: 23785,
@@ -42,7 +45,8 @@ const Posts = () => {
     },
     {
         name: "modestmouse",
-        postPic: "planta.jpg",
+        type: "image",
+        content: "planta.jpg",
         mainLike: "spacetoday1",
         date: "HÁ 3 HORAS",
         likeCount: 4787,
@@ -56,7 +60,7 @@ const Posts = () => {
     ]
 
     return (
-        <ul class="container-posts">
+        <ul class="posts">
             {posts.map((post) => <Post {...post} />)}
         </ul>
     )

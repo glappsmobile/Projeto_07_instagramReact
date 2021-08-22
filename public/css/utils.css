@@ -101,11 +101,11 @@
     padding: 0px !important;
 }
 
-.container-margin-m-r > * {
+.medium-gap > * {
     margin-right: var(--margin-m);
 }
 
-.container-margin-m-r > *:last-child {
+.medium-gap > *:last-child {
     margin-right: 0px;
 }
 

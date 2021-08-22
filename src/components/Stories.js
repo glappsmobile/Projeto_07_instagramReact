@@ -1,6 +1,6 @@
 const Storie = (props) => {
     return (
-        <li class="container-storie">
+        <li class="story">
             <img src={`images/profile/${props.name}.png`} class="img-storie" alt=""/>
             <span href="#" class="txt-username-storie">{props.name}</span>
         </li>
@@ -13,7 +13,7 @@ const Stories = () => {
     
     return (
         <div class="container-stories border-main">
-            <ul>{storiesList}</ul>
+            <ul class="stories">{storiesList}</ul>
             <ion-button class="desktop">
                 <ion-icon name="chevron-forward-circle" />
             </ion-button>

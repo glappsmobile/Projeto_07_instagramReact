@@ -1,4 +1,4 @@
-import numberWithDots from './numberWithDots';
+import numberWithDots from '../../helpers/numberWithDots';
 
 const Status = (props) => {
     return (
