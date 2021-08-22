@@ -1,3 +1,5 @@
+import { render } from "react-dom";
+
 const Suggestion = (props) => {
   return (
     <li class="suggestion">
@@ -12,7 +14,7 @@ const Suggestion = (props) => {
           <span>Segue você</span>
         </div>
       </div>
-      <span class="follow fake-anchor"> Seguir </span>
+      <span class="follow fake-pointer"> Seguir </span>
     </li>
   );
 };
@@ -20,38 +22,39 @@ const Suggestion = (props) => {
 const FooterItem = (props) => {
   return (
     <span>
-        <a href={props.url}>{props.text}</a>
-        <span class="separator"> • </span>
+      <a href={props.url}>{props.text}</a>
+      <span class="separator"> • </span>
     </span>
   )
 }
 
 const Footer = () => {
-  const footerItems = [
-    {text: "Sobre", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Ajuda", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Imprensa", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "API", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Carreiras", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Privacidade", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Termos", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Localizações", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Contas mais relevantes", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Hashtags", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Idioma", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Sobre", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Sobre", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-    {text: "Sobre", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/"}, 
-  ]
 
-  return (
-    <div class="footer">
-      <p> 
+  const footerItems = [
+    { text: "Sobre", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Ajuda", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Imprensa", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "API", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Carreiras", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Privacidade", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Termos", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Localizações", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Contas mais relevantes", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Hashtags", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Idioma", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Sobre", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Sobre", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+    { text: "Sobre", url: "https://glappsmobile.github.io/Projeto_07_instagramReact/" },
+  ];
+  
+    return (
+      <div class="footer">
+        <p>
           {footerItems.map(footerItem => <FooterItem text={footerItem.text} url={footerItem.url} />)}
-      </p>
-      <p> © 2021 INSTAGRAM DO FACEBOOK </p>
-    </div>
-  );
+        </p>
+        <p> © 2021 INSTAGRAM DO FACEBOOK </p>
+      </div>
+    );
 }
 
 const Header = (props) => {
@@ -72,17 +75,17 @@ const Header = (props) => {
 
 const SiderBar = (props) => {
   return (
-    <div class="bar-side">
+    <aside class="bar-side">
       <Header user={props.user} />
       <div class="suggestions-labels">
         <span class="txt-gray"> Sugestões para você </span>
-        <span class="fake-anchor"> Ver tudo </span>
+        <span class="fake-pointer"> Ver tudo </span>
       </div>
       <ul class="suggestions">
         {props.suggestions.map((suggestion) => <Suggestion name={suggestion} />)}
       </ul>
       <Footer />
-    </div>
+    </aside>
   );
 };
 

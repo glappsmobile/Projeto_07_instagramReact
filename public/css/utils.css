@@ -109,13 +109,7 @@
     margin-right: 0px;
 }
 
-.container-margin-s-r > * {
-    margin-right: var(--margin-s);
-}
 
-.container-margin-s-r > *:last-child {
-    margin-right: 0px;
-}
 
 /** LINE **/
 

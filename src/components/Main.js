@@ -1,3 +1,4 @@
+import MediaQuery from 'react-responsive'
 import Posts from './Posts';
 import Stories from './Stories';
 import SideBar from './SideBar';
@@ -11,7 +12,9 @@ const Main = () => {
                 <Stories />
                 <Posts />
             </div>
-            <SideBar user={user} suggestions={suggestions}/>
+            <MediaQuery minWidth={935}>
+                <SideBar user={user} suggestions={suggestions}/>
+            </MediaQuery>
         </div>
     );
 };

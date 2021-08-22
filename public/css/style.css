@@ -24,6 +24,9 @@ body {
 
 ion-button {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 ion-icon{
@@ -117,7 +120,7 @@ header {
     z-index: 10;
 }
 
-.bar-top-content{
+.header-desktop{
     width: 100%;
     max-width: calc(614px + 28px + 293px);
     display: flex;
@@ -213,7 +216,7 @@ li.suggestion .status {
     width: 66px;
     height: 66px;
     padding: 5px;
-    background: url(../images/stories_background.jpg);
+    background: url(../images/stories_background.png);
     background-size: 66px 66px;
     background-repeat: no-repeat;
 }
@@ -273,6 +276,19 @@ li.suggestion .status {
     justify-content: space-between;
     margin-top: 8px;
     margin-bottom: 8px;
+}
+
+.post-buttons div  {
+    display: flex; 
+}
+
+.post-buttons div > ion-button {
+    margin-right: 11px;
+}
+
+
+.container-margin-s-r > *:last-child {
+    margin-right: 0px;
 }
 
 .post-status {
@@ -387,7 +403,7 @@ ul.comments .comment ion-icon {
 
 
 /******************** START TEXTS ********************/
-.fake-anchor {
+.fake-pointer {
     cursor: pointer;
 }
 
@@ -500,12 +516,7 @@ strong  {
 
 /******** START DESKTOP WITHOUT SIDEBAR ***********/
 @media (max-width: 935px) {
-
-    .bar-side {
-       display: none;
-    }
-
-    .bar-top-content{
+    .header-desktop{
         width: 100% ;
         padding: 0px 18px;   
     }
@@ -537,7 +548,6 @@ strong  {
         border-bottom: 1px solid #DBDBDB;
     }
 
-
     .img-post {
         width: 100%;
         height: auto;
@@ -560,7 +570,7 @@ strong  {
         z-index: 10;
     }
     
-    .bar-top-mobile-content{
+    .header-mobile{
         width: 100%;
         padding: 0px 18px;   
         display: flex;
@@ -577,6 +587,7 @@ strong  {
         border-radius: none;
         padding-left: 18px;
         margin-bottom: 24px;
+        background-color: inherit;
     }
 
     .content {
