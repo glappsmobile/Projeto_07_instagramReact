@@ -4,7 +4,7 @@ const Posts = () => {
     const posts = [{
         name: "modestmouse",
         type: "image",
-        content: "skate.jpg",
+        content: "skate",
         mainLike: "electricpants",
         date: "4 DE JULHO",
         likeCount: 250523,
@@ -18,7 +18,7 @@ const Posts = () => {
     {
         name: "spacetoday1",
         type: "image",
-        content: "lua.jpg",
+        content: "lua",
         mainLike: "respondeai",
         date: "3 DE MAIO",
         likeCount: 11235,
@@ -31,8 +31,8 @@ const Posts = () => {
     },
     {
         name: "respondeai",
-        type: "image",
-        content: "planta.jpg",
+        type: "video",
+        content: "video",
         mainLike: "theavettbrothers",
         date: "1 DIA ATRÁS",
         likeCount: 23785,
@@ -46,7 +46,7 @@ const Posts = () => {
     {
         name: "modestmouse",
         type: "image",
-        content: "planta.jpg",
+        content: "planta",
         mainLike: "spacetoday1",
         date: "HÁ 3 HORAS",
         likeCount: 4787,

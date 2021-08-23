@@ -3,40 +3,57 @@ import Buttons from './Buttons';
 import Comments from './Comments';
 import Status from './Status';
 import Input from './Input';
+import IonIcon from '../IonIcon';
+import React from 'react';
 
+class Video extends React.Component {
+    handleClick = (caller) => {
+        const parent = caller.target.parentElement;
+        const video = parent.querySelector("video");
+        const button = parent.querySelector("ion-icon");
+        
+        if (video.paused) {
+            video.play();
+            button.setAttribute("name", "pause");
+        } else {
+            video.pause();
+            button.setAttribute("name", "play");
+        }
+    }
 
-const Video = () => {
-    return (
-        <div class="container-video padding-none">
-            <video class="video-post border-main border-none-b" id="video" muted autoplay loop>
-                <source src="videos/video.mp4" type="video/mp4" />
-                <source src="videos/video.ogv" type="video/ogv" />
-                Seu navegador não suporta esse tipo de vídeo.
-            </video>
-        </div>
-    )
+    render() {
+        return (
+            <div class="container-video">
+                <IonIcon name="play" action={this.handleClick} />
+                <video class="video-post border-main" loop>
+                    <source src={`videos/${this.props.content}.mp4`} type="video/mp4" />
+                    <source src={`videos/${this.props.content}.ogv`} type="video/ogv" />
+                    Seu navegador não suporta esse tipo de vídeo.
+                </video>
+            </div>
+        )
+    }
 }
 
 const Image = (props) => {
     return (
         <img
             class="img-post"
-            src={`images/posts/${props.content}`}
+            src={`images/posts/${props.content}.jpg`}
             alt={`Post de ${props.name}`}
         />
     )
 }
 
-
 const Post = (props) => {
-
-    const isImage = props.type === 'image';
 
     return (
         <li class="post border-main">
             <Header name={props.name} />
-            {isImage && (
-            <Image name={props.name} content={props.content}/>
+            {(props.type === 'image') ? (
+                <Image name={props.name} content={props.content} />
+            ) : (
+                <Video name={props.name} content={props.content} />
             )}
             <Buttons />
             <Status likeCount={props.likeCount} mainLike={props.mainLike} />

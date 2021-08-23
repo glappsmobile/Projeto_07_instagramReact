@@ -29,6 +29,8 @@ ion-button {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: fit-content;
+  height: fit-content;
 }
 
 ion-icon {
@@ -169,6 +171,7 @@ en:hover {
 .container-stories ul li {
   margin-right: 15px;
 }
+
 .container-stories ion-button {
   position: absolute;
   right: 8px;
@@ -242,6 +245,39 @@ li.suggestion .status {
 
 .posts:last-child {
   margin-bottom: 0px;
+}
+
+.post .container-video {
+  position: relative;
+  padding: 0;
+}
+
+.post .container-video video {
+  pointer-events: none;
+  z-index: -1;
+}
+
+.post .container-video ion-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  color: #ffffff;
+  font-size: 100px;
+  z-index: 1;
+  opacity: 0;
+  transition: 200ms;
+}
+
+.post .container-video:hover ion-button {
+  opacity: 100;
+}
+
+.post .container-video ion-icon {
+  color: #ffffff;
+  font-size: 100px;
 }
 
 .post-status > img {
@@ -567,11 +603,6 @@ strong {
   }
 
   .img-post {
-    width: 100%;
-    height: auto;
-  }
-
-  .video-post {
     width: 100%;
     height: auto;
   }
