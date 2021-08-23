@@ -1,4 +1,3 @@
-/******************** START VARS ********************/
 :root {
   --htopbar: 54px; /** HEIGHT TOPBAR **/
   --hbottombar: 55px; /** HEIGHT BOTTOMBAR **/
@@ -9,9 +8,7 @@
     var(--margin-from-topbar) + 21px
   ); /** SIDEBAR'S PADDING TOP **/
 }
-/******************** END VARS ********************/
 
-/******************** START GENERAL ********************/
 * {
   box-sizing: border-box;
 }
@@ -63,25 +60,18 @@ img:hover {
   cursor: pointer;
 }
 
-en:hover {
+strong {
+  font-weight: 600;
   cursor: pointer;
 }
 
 .mobile {
-  display: none !important;
+  display: none;
 }
 
 .desktop {
-  display: flex !important;
+  display: flex;
 }
-
-.last-margin-bottom {
-  margin-bottom: 10px !important;
-}
-
-/******************** END GENERAL ********************/
-
-/******************** START BUTTONS *****************/
 
 .btn-publish {
   font-weight: 600;
@@ -93,9 +83,6 @@ en:hover {
   color: #0095f6;
 }
 
-/******************** END BUTTON ********************/
-
-/******************** START CONTAINERS ********************/
 .row {
   display: flex;
   flex-direction: row;
@@ -109,7 +96,7 @@ en:hover {
   justify-content: center;
 }
 
- .root > div > header {
+.root > div > header {
   height: var(--htopbar);
   position: fixed;
   top: 0;
@@ -222,15 +209,6 @@ li.suggestion .status {
   background: url(../images/stories_background.png);
   background-size: 66px 66px;
   background-repeat: no-repeat;
-}
-
-.absolute-center {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  margin: auto;
 }
 
 .post {
@@ -375,9 +353,6 @@ ul.comments .comment ion-icon {
   border-top: 1px solid #dbdbdb;
 }
 
-/******************** END CONTAINERS ********************/
-
-/******************** START INPUT ********************/
 .input-search {
   width: 215px;
   height: 28px;
@@ -393,18 +368,13 @@ ul.comments .comment ion-icon {
   margin: 0 15px;
 }
 
-/******************** END INPUT ********************/
-
-/******************** START DIVISORS ********************/
 .divisor-topbar {
   width: 1px;
   height: 22px;
   background-color: #dbdbdb;
   margin: 0 8px 0 8px;
 }
-/******************** END DIVISORS ********************/
 
-/******************** START IMAGES ********************/
 .img-post {
   width: 100%;
   height: 612px;
@@ -420,7 +390,7 @@ ul.comments .comment ion-icon {
   height: 32px;
 }
 
-.img-profile-mini {
+.img-tiny {
   width: 24px;
   height: 24px;
 }
@@ -434,20 +404,6 @@ ul.comments .comment ion-icon {
   height: 56px;
 }
 
-.img-big {
-  width: 100px;
-  height: 100px;
-}
-
-.icon-micro {
-  width: 13px;
-  height: 13px;
-  margin-left: 1px;
-}
-
-/******************** END IMAGES ********************/
-
-/******************** START TEXTS ********************/
 .fake-pointer {
   cursor: pointer;
 }
@@ -467,8 +423,6 @@ ul.comments .comment ion-icon {
   margin-top: 2px;
   font-weight: 300;
 }
-
-
 
 .bar-side footer {
   color: #c7c7c7;
@@ -516,17 +470,6 @@ ul.comments .comment ion-icon {
   margin-bottom: 10px;
 }
 
-en {
-  font-weight: 600;
-}
-
-.txt-username-strong {
-  color: black;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 14px;
-}
-
 .txt-username-storie {
   color: #262626;
   font-size: 12px;
@@ -542,35 +485,14 @@ en {
   color: #8e8e8e;
 }
 
-.txt-black {
-  color: #262626;
+.medium-gap > * {
+  margin-right: var(--margin-m);
 }
 
-.txt-small {
-  font-size: 12px;
+.medium-gap > *:last-child {
+  margin-right: 0px;
 }
 
-.fsss {
-  font-size: 10px;
-}
-
-strong {
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.bold {
-  font-weight: 600;
-}
-
-.bold:hover {
-  cursor: pointer;
-}
-/******************** END TEXTS ********************/
-
-/******************** START MEDIA QUERY ********************/
-
-/******** START DESKTOP WITHOUT SIDEBAR ***********/
 @media (max-width: 935px) {
   .header-desktop {
     width: 100%;
@@ -578,21 +500,17 @@ strong {
   }
 }
 
-/******** END DESKTOP WITHOUT SIDEBAR ***********/
-
-/******** START MOBILE ***********/
-
 @media (max-width: 614px) {
   .mobile {
-    display: flex !important;
+    display: flex;
   }
 
   .desktop {
-    display: none !important;
+    display: none;
   }
 
-  .wmo100 {
-    width: 100% !important;
+  .container-main {
+    width: 100%;
   }
 
   .border-main {
@@ -605,18 +523,6 @@ strong {
   .img-post {
     width: 100%;
     height: auto;
-  }
-
-  .bar-top-mobile {
-    height: var(--htopbar);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    border-bottom: 1px solid #dbdbdb;
-    background-color: #ffffff;
-    justify-content: space-around;
-    z-index: 10;
   }
 
   .header-mobile {
@@ -657,12 +563,4 @@ strong {
     z-index: 10;
     background: #ffffff;
   }
-
-  .last-margin-bottom {
-    margin-bottom: 0px !important;
-  }
 }
-
-/******** END MOBILE ***********/
-
-/******************** END MEDIA QUERY ********************/

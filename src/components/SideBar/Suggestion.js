@@ -1,12 +1,10 @@
+import Avatar from "../Avatar";
+
 const Suggestion = (props) => {
     return (
         <li class="suggestion">
             <div>
-                <img 
-                    src={`images/profile/${props.name}.png`} 
-                    class="img-small" 
-                    alt={`Imagem de ${props.name}`}
-                />
+                <Avatar name={props.name} size="small" />
                 <div class="status">
                     <strong>{props.name}</strong>
                     <span>Segue você</span>

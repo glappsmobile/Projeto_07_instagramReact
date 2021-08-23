@@ -8,7 +8,7 @@ const Main = () => {
     const suggestions = ['electricpants', 'modestmouse', 'spacetoday1', 'respondeai', 'theavettbrothers'];
     return (
         <div class="content">
-            <div class="container-main wmo100">
+            <div class="container-main">
                 <Stories />
                 <Posts />
             </div>

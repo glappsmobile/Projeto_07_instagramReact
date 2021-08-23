@@ -1,7 +1,9 @@
+import Avatar from "./Avatar";
+
 const Storie = (props) => {
     return (
         <li class="story">
-            <img src={`images/profile/${props.name}.png`} class="img-storie" alt=""/>
+            <Avatar name={props.name} size="storie" />
             <span href="#" class="txt-username-storie">{props.name}</span>
         </li>
     )
